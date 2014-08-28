@@ -85,8 +85,8 @@ function [zi,s2zi] = kriging(vstruct,x,y,z,xi,yi,chunksize)
 %
 % see also: variogram, variogramfit, consolidator, pinv
 %
-% Date: 13. October, 2010
-% Author: Wolfgang Schwanghart (w.schwanghart[at]unibas.ch)
+% Date: 28. August, 2014
+% Author: Wolfgang Schwanghart (w.schwanghart[at]geo.uni-potsdam.de)
 
 % size of input arguments
 sizest = size(xi);
@@ -127,7 +127,7 @@ Dx = hypot(bsxfun(@minus,x,x'),bsxfun(@minus,y,y'));
 
 % if we have a bounded variogram model, it is convenient to set distances
 % that are longer than the range to the range since from here on the
-% variogram value remains the same and we don£t need composite functions.
+% variogram value remains the same and we donÂ£t need composite functions.
 switch vstruct.type;
     case 'bounded'
         Dx = min(Dx,vstruct.range);
